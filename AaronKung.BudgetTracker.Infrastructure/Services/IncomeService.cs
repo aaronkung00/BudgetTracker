@@ -74,9 +74,10 @@ namespace AaronKung.BudgetTracker.Infrastructure.Services
             return response;
         }
 
-        public async Task<IEnumerable<IncomeResponseModel>> GetIncomesByUserId(int userId)
+        public async Task<IEnumerable<Income>> GetIncomesByUserId(int userId)
         {
             var incomes = await _incomeAsyncRepository.ListAsync(i => i.UserId == userId);
+            /*
             List<IncomeResponseModel> response = new List<IncomeResponseModel>();
 
             foreach (var income in incomes)
@@ -91,9 +92,9 @@ namespace AaronKung.BudgetTracker.Infrastructure.Services
                     Remarks = income.Remarks
                 });
             }
+            */
 
-
-            return response;
+            return incomes;
         }
 
         public async Task<decimal> GetSumOfIncomes(int id)

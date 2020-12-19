@@ -39,7 +39,9 @@ namespace AaronKung.BudgetTracker.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AaronKung.BudgetTracker.API", Version = "v1" });
             });
 
-
+            services.AddControllers().AddNewtonsoftJson(
+               options => options.SerializerSettings.ReferenceLoopHandling
+               = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             // Add Db Service
             services.AddDbContext<BudgetTrackerDbContext>(options =>

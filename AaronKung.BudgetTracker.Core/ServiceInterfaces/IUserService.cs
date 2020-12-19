@@ -13,8 +13,8 @@ namespace AaronKung.BudgetTracker.Core.ServiceInterfaces
         Task<UserResponseModel> AddUser(AddUserRequestModel addUserRequestModel);
         Task UpdateUser(AddUserRequestModel addUserRequestModel);
         Task DeleteUser(int userId);
-        Task<IEnumerable<UserResponseModel>> GetAllUsers();
+        Task<IEnumerable<UserDetailResponseModel>> GetAllUsers();
         Task<bool> IsExist(string email);
-        Task<User> GetUserById(int id);
+        Task<UserDetailResponseModel> GetUserById(int id);
     }
 }

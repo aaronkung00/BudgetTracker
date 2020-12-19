@@ -14,7 +14,7 @@ namespace AaronKung.BudgetTracker.Core.ServiceInterfaces
         Task UpdateIncome(IncomeRequestModel incomeRequest);
         Task DeleteIncome(int income_Id);
         Task<IEnumerable<IncomeResponseModel>> GetAllIncomes();
-        Task<IEnumerable<IncomeResponseModel>> GetIncomesByUserId(int userId);
+        Task<IEnumerable<Income>> GetIncomesByUserId(int userId);
         Task<decimal> GetSumOfIncomes(int id);
     }
 }

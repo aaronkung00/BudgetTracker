@@ -76,9 +76,10 @@ namespace AaronKung.BudgetTracker.Infrastructure.Services
             return response;
         }
 
-        public async Task<IEnumerable<ExpenseResponseModel>> GetExpensesByUserId(int userId)
+        public async Task<IEnumerable<Expenditure>> GetExpensesByUserId(int userId)
         {
             var expenses = await _expenseAsyncRepository.ListAsync(e => e.UserId == userId);
+            /*
             List<ExpenseResponseModel> response = new List<ExpenseResponseModel>();
             foreach (var exp in expenses)
             {
@@ -95,8 +96,8 @@ namespace AaronKung.BudgetTracker.Infrastructure.Services
                     });
                 }
             }
-
-            return response;
+            */
+            return expenses;
         }
 
         public async Task<decimal> GetSumOfExpenses(int userId)

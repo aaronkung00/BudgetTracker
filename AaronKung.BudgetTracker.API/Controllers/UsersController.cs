@@ -22,7 +22,7 @@ namespace AaronKung.BudgetTracker.API.Controllers
         }
 
 
-        [HttpPost("addUser")]
+        [HttpPost()]
         public async Task<IActionResult> AddUser(AddUserRequestModel addUserRequest)
         {
             if (await _userService.IsExist(addUserRequest.Email))
@@ -33,7 +33,7 @@ namespace AaronKung.BudgetTracker.API.Controllers
             return Ok(response);
         }
 
-        [HttpPut("UpdateUser")]
+        [HttpPut()]
         public async Task<IActionResult> UpdateUser(AddUserRequestModel addUserRequest)
         {
             await _userService.UpdateUser(addUserRequest);
