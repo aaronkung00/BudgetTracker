@@ -22,7 +22,8 @@ namespace AaronKung.BudgetTracker.API.Controllers
         }
 
 
-        [HttpPost()]
+        [HttpPost]
+        [Route("addUser")]
         public async Task<IActionResult> AddUser(AddUserRequestModel addUserRequest)
         {
             if (await _userService.IsExist(addUserRequest.Email))
@@ -33,7 +34,8 @@ namespace AaronKung.BudgetTracker.API.Controllers
             return Ok(response);
         }
 
-        [HttpPut()]
+        [HttpPut]
+        [Route("updatUser")]
         public async Task<IActionResult> UpdateUser(AddUserRequestModel addUserRequest)
         {
             await _userService.UpdateUser(addUserRequest);
@@ -54,12 +56,11 @@ namespace AaronKung.BudgetTracker.API.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet]
+        [Route("{id:int}", Name = "GetUserById")]
         public async Task<IActionResult> GetUserById(int id)
         {
             var user = await _userService.GetUserById(id);
-
-        
             return Ok(user);
         }
 

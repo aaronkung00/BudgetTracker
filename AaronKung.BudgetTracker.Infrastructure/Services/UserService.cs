@@ -71,8 +71,8 @@ namespace AaronKung.BudgetTracker.Infrastructure.Services
                 var user_incomes = await _incomeService.GetIncomesByUserId(user.Id);
                 var user_expenses = await _expenseService.GetExpensesByUserId(user.Id);
 
-                user.Incomes = user_incomes.ToList();
-                user.Expenditures = user_expenses.ToList();
+      //          user.Incomes = user_incomes.ToList();
+      //          user.Expenditures = user_expenses.ToList();
 
                 var userTotalIncome = user_incomes.Select(i => i.Amount).DefaultIfEmpty(0).Sum();
                 var userTotalExpense = user_expenses.Select(e => e.Amount).DefaultIfEmpty(0).Sum();
@@ -118,8 +118,8 @@ namespace AaronKung.BudgetTracker.Infrastructure.Services
             var user_incomes = await _incomeService.GetIncomesByUserId(user.Id);
             var user_expenses = await _expenseService.GetExpensesByUserId(user.Id);
 
-            user.Incomes = user_incomes.ToList();
-            user.Expenditures = user_expenses.ToList();
+        //    user.Incomes = user_incomes.ToList();
+        //    user.Expenditures = user_expenses.ToList();
 
             var userTotalIncome = user_incomes.Select(i => i.Amount).DefaultIfEmpty(0).Sum();
             var userTotalExpense = user_expenses.Select(e => e.Amount).DefaultIfEmpty(0).Sum();

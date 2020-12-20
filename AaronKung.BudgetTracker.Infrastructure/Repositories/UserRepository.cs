@@ -19,7 +19,7 @@ namespace AaronKung.BudgetTracker.Infrastructure.Repositories
 
         public override async Task<User> GetByIdAsync(int id)
         {
-            var user = await _dbContext.Users.Include(u => u.Expenditures).Include(u => u.Expenditures).FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _dbContext.Users.Include(u => u.Expenditures).Include(u => u.Incomes).FirstOrDefaultAsync(u => u.Id == id);
 
             return user;
         }
